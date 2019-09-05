@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EventKit
 
 internal protocol EndTimesPickerViewCellDelegate: AnyObject {
   func endTimesViewCell(_ cell: EndTimesPickerViewCell, didSelectTimes times: Int)
@@ -21,9 +22,9 @@ internal class EndTimesPickerViewCell: UITableViewCell, EndTypeTableViewCell {
   //Properties
   internal weak var delegate: EndTimesPickerViewCellDelegate?
   
-  var endType: RecurrenceEndType? {
+  var recurrenceEnd: EKRecurrenceEnd? {
     didSet {
-      if case .afterTimes(let times)? = endType {
+      if let times = recurrenceEnd?.occurrenceCount {
         pickerView.selectRow(times - 1, inComponent: 0, animated: false)
       }
     }

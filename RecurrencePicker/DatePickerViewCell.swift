@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EventKit
 
 internal protocol DatePickerViewCellDelegate: AnyObject {
   func datePickerViewCell(_ cell: DatePickerViewCell, didSelectDate date: Date)
@@ -23,9 +24,9 @@ internal class DatePickerViewCell: UITableViewCell, EndTypeTableViewCell {
   
   //Properties
   internal weak var delegate: DatePickerViewCellDelegate?
-  var endType: RecurrenceEndType? {
+  var recurrenceEnd: EKRecurrenceEnd? {
     didSet {
-      if case .onDate(let date)? = endType {
+      if let date = recurrenceEnd?.endDate {
         datePicker.setDate(date, animated: false)
       }
     }

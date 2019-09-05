@@ -7,15 +7,10 @@
 //
 
 import UIKit
+import EventKit
 
 internal protocol EndRecurrenceDateViewControllerDelegate: class {
-  func endRecurrenceDateViewControllerDelegate(_ controller: EndRecurrenceDateViewController, didSelectRecurrenceEndDate endType: RecurrenceEndType)
-}
-
-enum RecurrenceEndType: Equatable {
-  case never
-  case onDate(Date)
-  case afterTimes(Int)
+  func endRecurrenceDateViewControllerDelegate(_ controller: EndRecurrenceDateViewController, didSelectRecurrenceEndDate recurrenceEnd: EKRecurrenceEnd?)
 }
 
 internal class EndRecurrenceDateViewController: UITableViewController {
@@ -28,34 +23,29 @@ internal class EndRecurrenceDateViewController: UITableViewController {
   
   fileprivate var isShowingPickerView = false
   fileprivate var isShowingOnDatePickerView: Bool {
-    if case .onDate = endType, isShowingPickerView {
+    if let _ = recurrenceEnd?.endDate, isShowingPickerView {
       return true
     } else {
       return false
     }
   }
   fileprivate var isShowingAfterTimesPickerView: Bool {
-    if case .afterTimes = endType, isShowingPickerView {
+    if let count = recurrenceEnd?.occurrenceCount, count > 0, isShowingPickerView {
       return true
     } else {
       return false
     }
   }
-  var endType: RecurrenceEndType = .never {
+  var recurrenceEnd: EKRecurrenceEnd? {
     didSet {
-      switch endType {
-      case .onDate:
+      if recurrenceEnd?.endDate != nil {
         selectedIndexPath = IndexPath(row: 1, section: 0)
         isShowingPickerView = true
-        
-      case .afterTimes:
+      } else if recurrenceEnd?.occurrenceCount != nil {
         selectedIndexPath = IndexPath(row: 2, section: 0)
         isShowingPickerView = true
-        
-      default:
-        break
       }
-      delegate?.endRecurrenceDateViewControllerDelegate(self, didSelectRecurrenceEndDate: endType)
+      delegate?.endRecurrenceDateViewControllerDelegate(self, didSelectRecurrenceEndDate: recurrenceEnd)
     }
   }
   fileprivate var selectedIndexPath = IndexPath(row: 0, section: 0)
@@ -76,13 +66,13 @@ extension EndRecurrenceDateViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     if isShowingOnDatePickerView && indexPath.row == 2 {
       let cell = tableView.dequeueReusableCell(withIdentifier: CellID.datePickerViewCell, for: indexPath) as! DatePickerViewCell
-      cell.endType = endType
+      cell.recurrenceEnd = recurrenceEnd
       cell.delegate = self
       return cell
     } else if isShowingAfterTimesPickerView && indexPath.row == 3 {
       let cell = tableView.dequeueReusableCell(withIdentifier: CellID.endTimesPickerViewCell, for: indexPath) as! EndTimesPickerViewCell
       cell.delegate = self
-      cell.endType = endType
+      cell.recurrenceEnd = recurrenceEnd
       return cell
     }
     
@@ -119,20 +109,20 @@ extension EndRecurrenceDateViewController {
     switch indexPath.row {
     case 0:
       unfold()
-      endType = .never
+      recurrenceEnd = nil
       
     case 1:
       if isShowingAfterTimesPickerView {
         unfoldAfterTimesPicker()
       }
-      endType = .onDate(Date())
+      recurrenceEnd = EKRecurrenceEnd(end: Date())
       foldDatePicker()
       
     case 2 where !isShowingOnDatePickerView, 3 where isShowingOnDatePickerView:
       if isShowingOnDatePickerView {
         unfoldDatePicker()
       }
-      endType = .afterTimes(1)
+      recurrenceEnd = EKRecurrenceEnd(occurrenceCount: 1)
       foldAfterTimesPicker()
       selectedIndexPath = IndexPath(row: 2, section: 0)
       
@@ -203,16 +193,16 @@ extension EndRecurrenceDateViewController {
 
 extension EndRecurrenceDateViewController: DatePickerViewCellDelegate {
   func datePickerViewCell(_ cell: DatePickerViewCell, didSelectDate date: Date) {
-    endType = .onDate(date)
+    recurrenceEnd = EKRecurrenceEnd(end: date)
   }
 }
 
 extension EndRecurrenceDateViewController: EndTimesPickerViewCellDelegate {
   func endTimesViewCell(_ cell: EndTimesPickerViewCell, didSelectTimes times: Int) {
-    endType = .afterTimes(times)
+    recurrenceEnd = EKRecurrenceEnd(occurrenceCount: times)
   }
 }
 
 protocol EndTypeTableViewCell: UITableViewCell {
-  var endType: RecurrenceEndType? { get set }
+  var recurrenceEnd: EKRecurrenceEnd? { get set }
 }
