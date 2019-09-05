@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import EventKit
 import RRuleSwift
 
 internal protocol CustomRecurrenceViewControllerDelegate: class {

@@ -47,3 +47,10 @@
 "RecurrenceRuleText.element.day" = "";
 "RecurrenceRuleText.everyWeekday" = "Event will occur every weekday.";
 "RecurrenceRuleText.byWeekdaysOrMonthdaysOrMonths" = "Event will occur every %@ %@.";
+
+"basicRecurrence.endDate" = "Recurrence end";
+"basicRecurrence.endDate.never" = "Never";
+"basicRecurrence.endDate.onDate" = "On date";
+"basicRecurrence.endDate.after" = "After";
+
+

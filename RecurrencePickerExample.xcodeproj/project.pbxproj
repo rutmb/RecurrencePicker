@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D376ED721CB638C000380B5B /* RRuleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32DCCB51CB63104000D8189 /* RRuleSwift.framework */; };
-		D3AA862B1CB7BD2E00A80EEA /* RecurrencePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3AA862A1CB7BD2E00A80EEA /* RecurrencePicker.framework */; };
-		D3AA862C1CB7BD2E00A80EEA /* RecurrencePicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3AA862A1CB7BD2E00A80EEA /* RecurrencePicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		78DE8C282320ECB6008A39F1 /* RecurrencePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DE8C272320ECB6008A39F1 /* RecurrencePicker.framework */; };
+		78DE8C2B2320ECBB008A39F1 /* RecurrencePicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78DE8C292320ECBB008A39F1 /* RecurrencePicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D3BB7EF81CB4F1820068A253 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB7EF71CB4F1820068A253 /* AppDelegate.swift */; };
 		D3BB7EFF1CB4F1820068A253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BB7EFE1CB4F1820068A253 /* Assets.xcassets */; };
 		D3BB7F561CB4F7350068A253 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3BB7F551CB4F7350068A253 /* Main.storyboard */; };
@@ -18,13 +17,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D376ED711CB6388500380B5B /* Embed Frameworks */ = {
+		78DE8C2C2320ECBC008A39F1 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D3AA862C1CB7BD2E00A80EEA /* RecurrencePicker.framework in Embed Frameworks */,
+				78DE8C2B2320ECBB008A39F1 /* RecurrencePicker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,8 +31,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		78DE8C0D231FEF0C008A39F1 /* RecurrencePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RecurrencePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78DE8C192320135F008A39F1 /* RecurrencePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RecurrencePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78DE8C272320ECB6008A39F1 /* RecurrencePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RecurrencePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78DE8C292320ECBB008A39F1 /* RecurrencePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RecurrencePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32DCCB51CB63104000D8189 /* RRuleSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RRuleSwift.framework; path = Carthage/Build/iOS/RRuleSwift.framework; sourceTree = "<group>"; };
-		D3AA862A1CB7BD2E00A80EEA /* RecurrencePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = RecurrencePicker.framework; path = "/Users/hongxin/Library/Developer/Xcode/DerivedData/RecurrencePicker-dasrmsqunastrogxkkxazeezalda/Build/Products/Debug-iphonesimulator/RecurrencePicker.framework"; sourceTree = "<absolute>"; };
 		D3BB7EF41CB4F1820068A253 /* RecurrencePickerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecurrencePickerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BB7EF71CB4F1820068A253 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3BB7EFE1CB4F1820068A253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,21 +50,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3AA862B1CB7BD2E00A80EEA /* RecurrencePicker.framework in Frameworks */,
-				D376ED721CB638C000380B5B /* RRuleSwift.framework in Frameworks */,
+				78DE8C282320ECB6008A39F1 /* RecurrencePicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78DE8C0C231FEF0C008A39F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78DE8C272320ECB6008A39F1 /* RecurrencePicker.framework */,
+				78DE8C0D231FEF0C008A39F1 /* RecurrencePicker.framework */,
+				78DE8C192320135F008A39F1 /* RecurrencePicker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D3BB7EEB1CB4F1820068A253 = {
 			isa = PBXGroup;
 			children = (
-				D3AA862A1CB7BD2E00A80EEA /* RecurrencePicker.framework */,
+				78DE8C292320ECBB008A39F1 /* RecurrencePicker.framework */,
 				D32DCCB51CB63104000D8189 /* RRuleSwift.framework */,
 				D3BB7EF61CB4F1820068A253 /* RecurrencePickerExample */,
 				D3BB7EF51CB4F1820068A253 /* Products */,
+				78DE8C0C231FEF0C008A39F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +109,8 @@
 				D3BB7EF01CB4F1820068A253 /* Sources */,
 				D3BB7EF11CB4F1820068A253 /* Frameworks */,
 				D3BB7EF21CB4F1820068A253 /* Resources */,
-				D376ED711CB6388500380B5B /* Embed Frameworks */,
 				D376ED731CB6392300380B5B /* ShellScript */,
+				78DE8C2C2320ECBC008A39F1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,6 +317,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/RecurrencePickerExample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Teambition.RecurrencePickerExample;
 				PRODUCT_NAME = RecurrencePickerExample;
@@ -321,6 +334,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/RecurrencePickerExample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Teambition.RecurrencePickerExample;
 				PRODUCT_NAME = RecurrencePickerExample;

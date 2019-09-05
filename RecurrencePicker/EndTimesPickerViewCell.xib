@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EndTimesPickerViewCell" id="KGk-i7-Jjw" customClass="EndTimesPickerViewCell" customModule="RecurrencePicker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="230"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="357" height="229.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94Z-hn-kVk">
+                        <rect key="frame" x="0.0" y="0.0" width="357" height="229.5"/>
+                        <connections>
+                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="f35-bq-ozn"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="THv-WU-hEl"/>
+                        </connections>
+                    </pickerView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="94Z-hn-kVk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1FS-dt-cqo"/>
+                    <constraint firstAttribute="bottom" secondItem="94Z-hn-kVk" secondAttribute="bottom" id="Aip-zS-UdG"/>
+                    <constraint firstAttribute="trailing" secondItem="94Z-hn-kVk" secondAttribute="trailing" id="c4d-0c-z0R"/>
+                    <constraint firstItem="94Z-hn-kVk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="flJ-xl-U7G"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="pickerView" destination="94Z-hn-kVk" id="KPD-4H-dKg"/>
+            </connections>
+            <point key="canvasLocation" x="103.62318840579711" y="101.45089285714285"/>
+        </tableViewCell>
+    </objects>
+</document>
