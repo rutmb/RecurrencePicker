@@ -17,6 +17,9 @@ internal struct CellID {
     static let pickerViewCell = "PickerViewCell"
     static let selectorItemCell = "SelectorItemCell"
     static let monthOrDaySelectorCell = "MonthOrDaySelectorCell"
+    static let basicDetailCell = "BasicDetailCell"
+    static let datePickerViewCell = "DatePickerViewCell"
+    static let endTimesPickerViewCell = "EndTimesPickerViewCell"
 }
 
 internal struct Constant {

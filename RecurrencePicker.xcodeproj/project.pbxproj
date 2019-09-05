@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78DE8C11231FEF81008A39F1 /* DatePickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DE8C0F231FEF81008A39F1 /* DatePickerViewCell.swift */; };
+		78DE8C12231FEF81008A39F1 /* DatePickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78DE8C10231FEF81008A39F1 /* DatePickerViewCell.xib */; };
+		78DE8C14231FF20D008A39F1 /* EndRecurrenceDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DE8C13231FF20D008A39F1 /* EndRecurrenceDateViewController.swift */; };
+		78DE8C17231FF3E6008A39F1 /* EndTimesPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DE8C15231FF3E6008A39F1 /* EndTimesPickerViewCell.swift */; };
+		78DE8C18231FF3E6008A39F1 /* EndTimesPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78DE8C16231FF3E6008A39F1 /* EndTimesPickerViewCell.xib */; };
 		D31AEEBE1CBB858A000A0783 /* GridSelectorLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AEEBD1CBB858A000A0783 /* GridSelectorLayout.swift */; };
 		D325CAB21CBAA2C900C5559F /* MonthOrDaySelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325CAB01CBAA2C900C5559F /* MonthOrDaySelectorCell.swift */; };
 		D325CAB31CBAA2C900C5559F /* MonthOrDaySelectorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D325CAB11CBAA2C900C5559F /* MonthOrDaySelectorCell.xib */; };
@@ -31,6 +36,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78DE8C0F231FEF81008A39F1 /* DatePickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewCell.swift; sourceTree = "<group>"; };
+		78DE8C10231FEF81008A39F1 /* DatePickerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerViewCell.xib; sourceTree = "<group>"; };
+		78DE8C13231FF20D008A39F1 /* EndRecurrenceDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndRecurrenceDateViewController.swift; sourceTree = "<group>"; };
+		78DE8C15231FF3E6008A39F1 /* EndTimesPickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndTimesPickerViewCell.swift; sourceTree = "<group>"; };
+		78DE8C16231FF3E6008A39F1 /* EndTimesPickerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EndTimesPickerViewCell.xib; sourceTree = "<group>"; };
 		D31AEEBD1CBB858A000A0783 /* GridSelectorLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridSelectorLayout.swift; sourceTree = "<group>"; };
 		D325CAB01CBAA2C900C5559F /* MonthOrDaySelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthOrDaySelectorCell.swift; sourceTree = "<group>"; };
 		D325CAB11CBAA2C900C5559F /* MonthOrDaySelectorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthOrDaySelectorCell.xib; sourceTree = "<group>"; };
@@ -86,6 +96,10 @@
 		D376ED811CB7A50800380B5B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				78DE8C0F231FEF81008A39F1 /* DatePickerViewCell.swift */,
+				78DE8C10231FEF81008A39F1 /* DatePickerViewCell.xib */,
+				78DE8C15231FF3E6008A39F1 /* EndTimesPickerViewCell.swift */,
+				78DE8C16231FF3E6008A39F1 /* EndTimesPickerViewCell.xib */,
 				D3677C621CBA1E65009FB74E /* PickerViewCell.xib */,
 				D3677C611CBA1E65009FB74E /* PickerViewCell.swift */,
 				D3677C681CBA4F3F009FB74E /* SelectorItemCell.xib */,
@@ -128,6 +142,7 @@
 				D376ED761CB6459400380B5B /* RecurrenceRule+Definition.swift */,
 				D376ED781CB754D400380B5B /* RecurrenceRule+Text.swift */,
 				D32DCCAB1CB61A55000D8189 /* CustomRecurrenceViewController.swift */,
+				78DE8C13231FF20D008A39F1 /* EndRecurrenceDateViewController.swift */,
 			);
 			path = RecurrencePicker;
 			sourceTree = "<group>";
@@ -231,10 +246,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78DE8C12231FEF81008A39F1 /* DatePickerViewCell.xib in Resources */,
 				D325CAB31CBAA2C900C5559F /* MonthOrDaySelectorCell.xib in Resources */,
 				D3BB7F321CB4F6170068A253 /* RecurrencePicker.strings in Resources */,
 				D3677C6A1CBA4F3F009FB74E /* SelectorItemCell.xib in Resources */,
 				D3677C641CBA1E65009FB74E /* PickerViewCell.xib in Resources */,
+				78DE8C18231FF3E6008A39F1 /* EndTimesPickerViewCell.xib in Resources */,
 				D32DCCB21CB62BAA000D8189 /* RecurrencePicker.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +266,7 @@
 				D31AEEBE1CBB858A000A0783 /* GridSelectorLayout.swift in Sources */,
 				D32DCCB41CB62E5B000D8189 /* Constants.swift in Sources */,
 				D376ED7F1CB777D600380B5B /* String+Extension.swift in Sources */,
+				78DE8C14231FF20D008A39F1 /* EndRecurrenceDateViewController.swift in Sources */,
 				D376ED7D1CB771D700380B5B /* EKWeekday+Sequence.swift in Sources */,
 				D376ED7B1CB760E300380B5B /* RecurrenceFrequency+Sequence.swift in Sources */,
 				D32DCCAA1CB61741000D8189 /* RecurrencePicker.swift in Sources */,
@@ -256,11 +274,13 @@
 				D376ED771CB6459400380B5B /* RecurrenceRule+Definition.swift in Sources */,
 				D32DCCAC1CB61A55000D8189 /* CustomRecurrenceViewController.swift in Sources */,
 				D3677C631CBA1E65009FB74E /* PickerViewCell.swift in Sources */,
+				78DE8C11231FEF81008A39F1 /* DatePickerViewCell.swift in Sources */,
 				D376ED791CB754D400380B5B /* RecurrenceRule+Text.swift in Sources */,
 				D376ED751CB6434A00380B5B /* RecurrenceRule+Generator.swift in Sources */,
 				D325CAB21CBAA2C900C5559F /* MonthOrDaySelectorCell.swift in Sources */,
 				D32DCCB01CB62433000D8189 /* InternationalControl.swift in Sources */,
 				D3677C691CBA4F3F009FB74E /* SelectorItemCell.swift in Sources */,
+				78DE8C17231FF3E6008A39F1 /* EndTimesPickerViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +433,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/RecurrencePicker/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Teambition.RecurrencePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -437,6 +458,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/RecurrencePicker/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Teambition.RecurrencePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";

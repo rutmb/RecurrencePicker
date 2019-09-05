@@ -32,6 +32,12 @@ open class RecurrencePicker: UITableViewController {
     }
     fileprivate var recurrenceRule: RecurrenceRule?
     fileprivate var selectedIndexPath = IndexPath(row: 0, section: 0)
+    fileprivate var endType: RecurrenceEndType = .never
+    fileprivate lazy var formatter: DateFormatter = {
+      let formatter = DateFormatter()
+      formatter.dateFormat = "EEEE, MMM d, yyyy"
+      return formatter
+    }()
 
     // MARK: - Initialization
     public convenience init(recurrenceRule: RecurrenceRule?) {
@@ -67,12 +73,14 @@ open class RecurrencePicker: UITableViewController {
 extension RecurrencePicker {
     // MARK: - Table view data source and delegate
     open override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return Constant.basicRecurrenceStrings().count
+        } else if section == 2 {
+            return 1
         } else {
             return 1
         }
@@ -83,7 +91,7 @@ extension RecurrencePicker {
     }
 
     open override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return section == 1 ? recurrenceRuleText() : nil
+        return section == 2 ? recurrenceRuleText() : nil
     }
 
     open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,9 +103,27 @@ extension RecurrencePicker {
         if indexPath.section == 0 {
             cell?.accessoryType = .none
             cell?.textLabel?.text = Constant.basicRecurrenceStrings()[indexPath.row]
-        } else {
+        } else if indexPath.section == 1 {
             cell?.accessoryType = .disclosureIndicator
             cell?.textLabel?.text = LocalizedString("RecurrencePicker.textLabel.custom")
+        } else {
+          var cell = tableView.dequeueReusableCell(withIdentifier: CellID.basicDetailCell)
+          if cell == nil {
+            cell = UITableViewCell(style: .value1, reuseIdentifier: CellID.basicDetailCell)
+          }
+          cell?.accessoryType = .disclosureIndicator
+          cell?.textLabel?.text = LocalizedString("basicRecurrence.endDate")
+          switch endType {
+          case .never:
+            cell?.detailTextLabel?.text = "Never"
+            
+          case .onDate(let date):
+            cell?.detailTextLabel?.text = "\(formatter.string(from: date))"
+            
+          case .afterTimes(let times):
+            cell?.detailTextLabel?.text = "After \(times) times"
+          }
+          return cell!
         }
 
         let checkmark = UIImage(named: "checkmark", in: Bundle(for: type(of: self)), compatibleWith: nil)
@@ -117,8 +143,10 @@ extension RecurrencePicker {
 
         lastSelectedCell?.imageView?.isHidden = true
         currentSelectedCell?.imageView?.isHidden = false
-
-        selectedIndexPath = indexPath
+      
+        if indexPath.section != 2 {
+          selectedIndexPath = indexPath
+        }
 
         if indexPath.section == 0 {
             updateRecurrenceRule(withSelectedIndexPath: indexPath)
@@ -126,7 +154,7 @@ extension RecurrencePicker {
             if !isModal {
                 let _ = navigationController?.popViewController(animated: true)
             }
-        } else {
+        } else if indexPath.section == 1 {
             let customRecurrenceViewController = CustomRecurrenceViewController(style: .grouped)
             customRecurrenceViewController.occurrenceDate = occurrenceDate
             customRecurrenceViewController.tintColor = tintColor
@@ -153,6 +181,15 @@ extension RecurrencePicker {
             customRecurrenceViewController.recurrenceRule = rule
 
             navigationController?.pushViewController(customRecurrenceViewController, animated: true)
+        } else {
+          let endRecurrenceDateViewController = EndRecurrenceDateViewController(style: .grouped)
+          endRecurrenceDateViewController.endType = endType
+          endRecurrenceDateViewController.tintColor = tintColor
+          endRecurrenceDateViewController.backgroundColor = backgroundColor
+          endRecurrenceDateViewController.separatorColor = separatorColor
+          endRecurrenceDateViewController.delegate = self
+          
+          navigationController?.pushViewController(endRecurrenceDateViewController, animated: true)
         }
 
         tableView.deselectRow(at: indexPath, animated: true)
@@ -277,4 +314,10 @@ extension RecurrencePicker: CustomRecurrenceViewControllerDelegate {
         self.recurrenceRule = recurrenceRule
         updateRecurrenceRuleText()
     }
+}
+extension RecurrencePicker: EndRecurrenceDateViewControllerDelegate {
+  func endRecurrenceDateViewControllerDelegate(_ controller: EndRecurrenceDateViewController, didSelectRecurrenceEndDate endType: RecurrenceEndType) {
+    self.endType = endType
+    tableView.reloadRows(at: [IndexPath(row: 0, section: 2)], with: .none)
+  }
 }
