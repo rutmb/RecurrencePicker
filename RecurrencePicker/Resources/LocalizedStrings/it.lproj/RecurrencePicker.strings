@@ -1,0 +1,59 @@
+/* 
+  RecurrencePicker.strings
+  RecurrencePicker
+
+  Created by Xin Hong on 16/4/7.
+  Copyright © 2016年 Teambition. All rights reserved.
+*/
+
+"Done" = "Fatto";
+"Close" = "Chiudi";
+
+"frequency.daily" = "Quotidiano";
+"frequency.weekly" = "Settimanalmente";
+"frequency.monthly" = "Mensile";
+"frequency.yearly" = "Annuale";
+
+"unit.day" = "Giorno";
+"unit.week" = "Settimana";
+"unit.month" = "Mese";
+"unit.year" = "Anno";
+
+"pluralUnit.day" = "giorni";
+"pluralUnit.week" = "settimane";
+"pluralUnit.month" = "months";
+"pluralUnit.year" = "anni";
+
+"basicRecurrence.never" = "Mai";
+"basicRecurrence.everyDay" = "Ogni giorno";
+"basicRecurrence.everyWeek" = "Ogni settimana";
+"basicRecurrence.everyTwoWeeks" = "Ogni 2 settimane";
+"basicRecurrence.everyMonth" = "Ogni mese";
+"basicRecurrence.everyYear" = "Ogni anno";
+"basicRecurrence.everyWeekday" = "Ogni giorno della settimana";
+
+"RecurrencePicker.navigation.title" = "Ripeti";
+"RecurrencePicker.textLabel.custom" = "Personalizzato";
+
+"CustomRecurrenceViewController.textLabel.frequency" = "Frequenza";
+"CustomRecurrenceViewController.textLabel.interval" = "Ogni";
+
+"RecurrenceRuleText.basicRecurrence" = "Ogni %@";
+"RecurrenceRuleText.afterTime" = " fine dopo %d volta.";
+"RecurrenceRuleText.afterTimes" = " fine dopo %d volte.";
+"RecurrenceRuleText.afterDate" = " fine dopo %@.";
+"RecurrenceRuleText.element.on.weekly" = "sul";
+"RecurrenceRuleText.element.on.monthly" = "sul";
+"RecurrenceRuleText.element.on.yearly" = "";
+"RecurrenceRuleText.element.and" = "e";
+"RecurrenceRuleText.element.comma" = ",";
+"RecurrenceRuleText.element.day" = "";
+"RecurrenceRuleText.everyWeekday" = "Tutti i giorni feriali";
+"RecurrenceRuleText.byWeekdaysOrMonthdaysOrMonths" = "Ogni %@ %@";
+
+"basicRecurrence.endDate" = "Fine ripetizione";
+"basicRecurrence.endDate.never" = "Mai";
+"basicRecurrence.endDate.onDate" = "Alla data";
+"basicRecurrence.endDate.after" = "Dopo";
+"basicRecurrence.endDate.times" = "volte";
+"basicRecurrence.endDate.afterTimes" = "Dopo %d volte";

@@ -8,21 +8,15 @@
 
 import Foundation
 
-public enum RecurrencePickerLanguage {
-    case english
-    case simplifiedChinese
-    case traditionalChinese
-    case korean
-    case japanese
-
+public enum RecurrencePickerLanguage: String {
+    case english = "en"
+    case german = "de"
+    case italian = "it"
+    case russian = "ru"
+    case french = "fr"
+ 
     internal var identifier: String {
-        switch self {
-        case .english: return "en"
-        case .simplifiedChinese: return "zh-Hans"
-        case .traditionalChinese: return "zh-Hant"
-        case .korean: return "ko"
-        case .japanese: return "ja"
-        }
+      return rawValue
     }
 }
 

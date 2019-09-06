@@ -1,0 +1,59 @@
+/* 
+  RecurrencePicker.strings
+  RecurrencePicker
+
+  Created by Xin Hong on 16/4/7.
+  Copyright © 2016年 Teambition. All rights reserved.
+*/
+
+"Done" = "Готово";
+"Close" = "Закрыть";
+
+"frequency.daily" = "Ежедневно";
+"frequency.weekly" = "Еженедельно";
+"frequency.monthly" = "Ежемесячно";
+"frequency.yearly" = "Ежегодно";
+
+"unit.day" = "День";
+"unit.week" = "Неделя";
+"unit.month" = "Месяц";
+"unit.year" = "Год";
+
+"pluralUnit.day" = "дни";
+"pluralUnit.week" = "недели";
+"pluralUnit.month" = "месяцы";
+"pluralUnit.year" = "годы";
+
+"basicRecurrence.never" = "Никогда";
+"basicRecurrence.everyDay" = "Каждый день";
+"basicRecurrence.everyWeek" = "Каждую неделю";
+"basicRecurrence.everyTwoWeeks" = "Каждые 2 недели";
+"basicRecurrence.everyMonth" = "Каждый месяц";
+"basicRecurrence.everyYear" = "Каждый год";
+"basicRecurrence.everyWeekday" = "Каждый будний день";
+
+"RecurrencePicker.navigation.title" = "Повтор";
+"RecurrencePicker.textLabel.custom" = "Настройка";
+
+"CustomRecurrenceViewController.textLabel.frequency" = "Частота";
+"CustomRecurrenceViewController.textLabel.interval" = "Кажд.";
+
+"RecurrenceRuleText.basicRecurrence" = "Кажд. %@";
+"RecurrenceRuleText.afterTime" = " завершение после %d повтора.";
+"RecurrenceRuleText.afterTimes" = " завершение после %d повторов.";
+"RecurrenceRuleText.afterDate" = " завершение после %@.";
+"RecurrenceRuleText.element.on.weekly" = "в";
+"RecurrenceRuleText.element.on.monthly" = "";
+"RecurrenceRuleText.element.on.yearly" = "в";
+"RecurrenceRuleText.element.and" = "и";
+"RecurrenceRuleText.element.comma" = ",";
+"RecurrenceRuleText.element.day" = "";
+"RecurrenceRuleText.everyWeekday" = "Кажд. будний день";
+"RecurrenceRuleText.byWeekdaysOrMonthdaysOrMonths" = "Кажд. %@ %@";
+
+"basicRecurrence.endDate" = "Завершение повтора";
+"basicRecurrence.endDate.never" = "Никогда";
+"basicRecurrence.endDate.onDate" = "В дату";
+"basicRecurrence.endDate.after" = "После";
+"basicRecurrence.endDate.times" = "повт.";
+"basicRecurrence.endDate.afterTimes" = "После %d повт.";

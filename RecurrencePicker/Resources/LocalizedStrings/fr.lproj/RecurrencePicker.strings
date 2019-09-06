@@ -1,0 +1,59 @@
+/* 
+  RecurrencePicker.strings
+  RecurrencePicker
+
+  Created by Xin Hong on 16/4/7.
+  Copyright © 2016年 Teambition. All rights reserved.
+*/
+
+"Done" = "Terminé";
+"Close" = "Fermer";
+
+"frequency.daily" = "Daily";
+"frequency.weekly" = "Hebdomadaire";
+"frequency.monthly" = "Mensuel";
+"frequency.yearly" = "Annuel";
+
+"unit.day" = "Jour";
+"unit.week" = "Semaine";
+"unit.month" = "Mois";
+"unit.year" = "Année";
+
+"pluralUnit.day" = "jours";
+"pluralUnit.week" = "semaines";
+"pluralUnit.month" = "mois";
+"pluralUnit.year" = "years";
+
+"basicRecurrence.never" = "Jamais";
+"basicRecurrence.everyDay" = "Tous les jours";
+"basicRecurrence.everyWeek" = "Toutes les semaines";
+"basicRecurrence.everyTwoWeeks" = "Toutes les 2 semaines";
+"basicRecurrence.everyMonth" = "Tous les mois";
+"basicRecurrence.everyYear" = "Chaque année";
+"basicRecurrence.everyWeekday" = "Tous les jours de la semaine";
+
+"RecurrencePicker.navigation.title" = "Répéter";
+"RecurrencePicker.textLabel.custom" = "Personnalisé";
+
+"CustomRecurrenceViewController.textLabel.frequency" = "Fréquence";
+"CustomRecurrenceViewController.textLabel.interval" = "Chaque";
+
+"RecurrenceRuleText.basicRecurrence" = "Chaque %@";
+"RecurrenceRuleText.afterTime" = " se termine après %d fois.";
+"RecurrenceRuleText.afterTimes" = " se termine après %d fois.";
+"RecurrenceRuleText.afterDate" = " se termine après %@.";
+"RecurrenceRuleText.element.on.weekly" = "sur";
+"RecurrenceRuleText.element.on.monthly" = "sur";
+"RecurrenceRuleText.element.on.yearly" = "en";
+"RecurrenceRuleText.element.and" = "et";
+"RecurrenceRuleText.element.comma" = ",";
+"RecurrenceRuleText.element.day" = "";
+"RecurrenceRuleText.everyWeekday" = "Chaque jour de la semaine";
+"RecurrenceRuleText.byWeekdaysOrMonthdaysOrMonths" = "Chaque %@ %@";
+
+"basicRecurrence.endDate" = "Fin de répéter";
+"basicRecurrence.endDate.never" = "Jamais";
+"basicRecurrence.endDate.onDate" = "À la date";
+"basicRecurrence.endDate.after" = "Après";
+"basicRecurrence.endDate.times" = "fois";
+"basicRecurrence.endDate.afterTimes" = "Après %d fois";

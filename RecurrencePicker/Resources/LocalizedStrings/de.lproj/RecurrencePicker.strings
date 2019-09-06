@@ -1,0 +1,59 @@
+/* 
+  RecurrencePicker.strings
+  RecurrencePicker
+
+  Created by Xin Hong on 16/4/7.
+  Copyright © 2016年 Teambition. All rights reserved.
+*/
+
+"Done" = "Fertig";
+"Close" = "Schliessen";
+
+"frequency.daily" = "Täglich";
+"frequency.weekly" = "Wöchentlich";
+"frequency.monthly" = "Monthly";
+"frequency.yearly" = "Jährlich";
+
+"unit.day" = "Tag";
+"unit.week" = "Woche";
+"unit.month" = "Monat";
+"unit.year" = "Year";
+
+"pluralUnit.day" = "tage";
+"pluralUnit.week" = "wochen";
+"pluralUnit.month" = "monate";
+"pluralUnit.year" = "jahre";
+
+"basicRecurrence.never" = "Nie";
+"basicRecurrence.everyDay" = "Jeden Tag";
+"basicRecurrence.everyWeek" = "Jede Woche";
+"basicRecurrence.everyTwoWeeks" = "Alle 2 Wochen";
+"basicRecurrence.everyMonth" = "Jeden Monat";
+"basicRecurrence.everyYear" = "Jedes Jahr";
+"basicRecurrence.everyWeekday" = "Jeden Wochentag";
+
+"RecurrencePicker.navigation.title" = "Wiederholen";
+"RecurrencePicker.textLabel.custom" = "Benutzerdefiniert";
+
+"CustomRecurrenceViewController.textLabel.frequency" = "Häufigkeit";
+"CustomRecurrenceViewController.textLabel.interval" = "Jeden";
+
+"RecurrenceRuleText.basicRecurrence" = "Ereignis tritt alle% @ auf";
+"RecurrenceRuleText.afterTime" = " am ende nach %d.";
+"RecurrenceRuleText.afterTimes" = " am ende nach %d.";
+"RecurrenceRuleText.afterDate" = " am ende nach %@.";
+"RecurrenceRuleText.element.on.weekly" = "am";
+"RecurrenceRuleText.element.on.monthly" = "am";
+"RecurrenceRuleText.element.on.yearly" = "im";
+"RecurrenceRuleText.element.and" = "und";
+"RecurrenceRuleText.element.comma" = ",";
+"RecurrenceRuleText.element.day" = "";
+"RecurrenceRuleText.everyWeekday" = "Jeden wochentag";
+"RecurrenceRuleText.byWeekdaysOrMonthdaysOrMonths" = "Jeden %@ %@";
+
+"basicRecurrence.endDate" = "Wiederholung beenden";
+"basicRecurrence.endDate.never" = "Nie";
+"basicRecurrence.endDate.onDate" = "Am Tag";
+"basicRecurrence.endDate.after" = "Nacher";
+"basicRecurrence.endDate.times" = "mal";
+"basicRecurrence.endDate.afterTimes" = "Nach %d mal";

@@ -14,6 +14,7 @@ open class RecurrencePicker: UITableViewController {
   open var language: RecurrencePickerLanguage = .english {
     didSet {
       InternationalControl.shared.language = language
+      commonInit()
     }
   }
   
@@ -38,7 +39,9 @@ open class RecurrencePicker: UITableViewController {
     }
     set {
       var recurrenceRule = newValue
-      recurrenceRule?.recurrenceEnd = recurrenceEnd
+      if recurrenceEnd != nil {
+        recurrenceRule?.recurrenceEnd = recurrenceEnd
+      }
       _recurrenceRule = recurrenceRule
       updateRecurrenceRuleText()
     }
@@ -56,7 +59,6 @@ open class RecurrencePicker: UITableViewController {
   // MARK: - Life cycle
   open override func viewDidLoad() {
     super.viewDidLoad()
-    commonInit()
   }
   
   open override func viewWillDisappear(_ animated: Bool) {
@@ -129,14 +131,15 @@ extension RecurrencePicker {
       cell?.detailTextLabel?.text = LocalizedString("basicRecurrence.endDate.never")
       if let date = recurrenceEnd?.endDate {
         cell?.detailTextLabel?.text = "\(date.toString())"
-      } else if let times = recurrenceEnd?.occurrenceCount, times > 0 {
-        cell?.detailTextLabel?.text = "After \(times) times"
+      } else if let times = recurrenceEnd?.occurrenceCount, times > 0 {        
+        cell?.detailTextLabel?.text = String(format: LocalizedString("basicRecurrence.endDate.afterTimes"), times)
       }
       return cell!
     }
     
     let checkmark = UIImage(named: "checkmark", in: Bundle(for: type(of: self)), compatibleWith: nil)
     cell?.imageView?.image = checkmark?.withRenderingMode(.alwaysTemplate)
+    cell?.imageView?.tintColor = tintColor
     
     if indexPath == selectedIndexPath {
       cell?.imageView?.isHidden = false
@@ -219,6 +222,7 @@ extension RecurrencePicker {
       tableView.separatorColor = separatorColor
     }
     updateSelectedIndexPath(withRule: recurrenceRule)
+    updateRecurrenceRuleText()
   }
   
   fileprivate func updateSelectedIndexPath(withRule recurrenceRule: RecurrenceRule?) {

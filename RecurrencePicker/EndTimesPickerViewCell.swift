@@ -9,19 +9,14 @@
 import UIKit
 import EventKit
 
-internal protocol EndTimesPickerViewCellDelegate: AnyObject {
-  func endTimesViewCell(_ cell: EndTimesPickerViewCell, didSelectTimes times: Int)
-}
-
-internal class EndTimesPickerViewCell: UITableViewCell, EndTypeTableViewCell {
+internal class EndTimesPickerViewCell: UITableViewCell, EndRecurrenceTableViewCellable {
   private let maxTimes = 999
   
   //IBOutlets
   @IBOutlet internal weak var pickerView: UIPickerView!
   
   //Properties
-  internal weak var delegate: EndTimesPickerViewCellDelegate?
-  
+  weak var delegate: EndRecurrenceTableViewDelegate?
   var recurrenceEnd: EKRecurrenceEnd? {
     didSet {
       if let times = recurrenceEnd?.occurrenceCount {
@@ -32,6 +27,8 @@ internal class EndTimesPickerViewCell: UITableViewCell, EndTypeTableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
+    selectionStyle = .none
+    accessoryType = .none
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
@@ -60,13 +57,13 @@ extension EndTimesPickerViewCell: UIPickerViewDelegate {
     if component == 0 {
       return "\(row+1)"
     } else {
-      return "times"
+      return LocalizedString("basicRecurrence.endDate.times")
     }
   }
   
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     if component == 0 {
-      delegate?.endTimesViewCell(self, didSelectTimes: row+1)
+      delegate?.endTypeViewCell(self, didSelectEndRecurrence: EKRecurrenceEnd(occurrenceCount: row + 1))
     }
   }
 }

@@ -38,7 +38,7 @@
 "CustomRecurrenceViewController.textLabel.frequency" = "Frequency";
 "CustomRecurrenceViewController.textLabel.interval" = "Every";
 
-"RecurrenceRuleText.basicRecurrence" = "Event will occur every %@";
+"RecurrenceRuleText.basicRecurrence" = "Every %@";
 "RecurrenceRuleText.afterTime" = " end after %d time.";
 "RecurrenceRuleText.afterTimes" = " end after %d times.";
 "RecurrenceRuleText.afterDate" = " end after %@.";
@@ -48,12 +48,12 @@
 "RecurrenceRuleText.element.and" = "and";
 "RecurrenceRuleText.element.comma" = ",";
 "RecurrenceRuleText.element.day" = "";
-"RecurrenceRuleText.everyWeekday" = "Event will occur every weekday";
-"RecurrenceRuleText.byWeekdaysOrMonthdaysOrMonths" = "Event will occur every %@ %@";
+"RecurrenceRuleText.everyWeekday" = "Every weekday";
+"RecurrenceRuleText.byWeekdaysOrMonthdaysOrMonths" = "Every %@ %@";
 
-"basicRecurrence.endDate" = "Recurrence end";
+"basicRecurrence.endDate" = "End repeat";
 "basicRecurrence.endDate.never" = "Never";
 "basicRecurrence.endDate.onDate" = "On date";
 "basicRecurrence.endDate.after" = "After";
-
-
+"basicRecurrence.endDate.times" = "times";
+"basicRecurrence.endDate.afterTimes" = "After %d times";
