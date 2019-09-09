@@ -38,7 +38,7 @@
 "CustomRecurrenceViewController.textLabel.frequency" = "Häufigkeit";
 "CustomRecurrenceViewController.textLabel.interval" = "Jeden";
 
-"RecurrenceRuleText.basicRecurrence" = "Ereignis tritt alle% @ auf";
+"RecurrenceRuleText.basicRecurrence" = "Ereignis tritt alle %@ auf";
 "RecurrenceRuleText.afterTime" = " am ende nach %d.";
 "RecurrenceRuleText.afterTimes" = " am ende nach %d.";
 "RecurrenceRuleText.afterDate" = " am ende nach %@.";
