@@ -30,6 +30,13 @@ internal class DatePickerViewCell: UITableViewCell, EndRecurrenceTableViewCellab
     }
   }
   
+  var occurrenceDate: Date? {
+    didSet {
+      datePicker.minimumDate = occurrenceDate
+    }
+  }
+  
+  //Base methods
   override func awakeFromNib() {
     super.awakeFromNib()
     selectionStyle = .none

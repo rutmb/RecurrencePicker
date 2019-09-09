@@ -9,8 +9,8 @@
 import UIKit
 import RecurrencePicker
 
-let languages: [RecurrencePickerLanguage] = [.english, .simplifiedChinese, .traditionalChinese, .korean, .japanese]
-let languageStrings = ["English", "Simplified Chinese", "Traditional Chinese", "Korean", "Japanese"]
+let languages: [RecurrencePickerLanguage] = [.english, .german, .russian, .italian, .french]
+let languageStrings = ["English", "German", "Russian", "Italian", "French"]
 private let kLanguageViewControllerCellID = "LanguageViewControllerCell"
 
 protocol LanguageViewControllerDelegate: class {

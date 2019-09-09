@@ -59,6 +59,7 @@ open class RecurrencePicker: UITableViewController {
   // MARK: - Life cycle
   open override func viewDidLoad() {
     super.viewDidLoad()
+    commonInit()
   }
   
   open override func viewWillDisappear(_ animated: Bool) {
@@ -192,6 +193,7 @@ extension RecurrencePicker {
       navigationController?.pushViewController(customRecurrenceViewController, animated: true)
     } else {
       let endRecurrenceDateViewController = EndRecurrenceDateViewController(style: .grouped)
+      endRecurrenceDateViewController.occurrenceDate = occurrenceDate
       endRecurrenceDateViewController.recurrenceEnd = recurrenceEnd
       endRecurrenceDateViewController.tintColor = tintColor
       endRecurrenceDateViewController.backgroundColor = backgroundColor

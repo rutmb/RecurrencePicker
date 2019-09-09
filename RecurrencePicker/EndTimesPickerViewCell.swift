@@ -17,6 +17,7 @@ internal class EndTimesPickerViewCell: UITableViewCell, EndRecurrenceTableViewCe
   
   //Properties
   weak var delegate: EndRecurrenceTableViewDelegate?
+  var occurrenceDate: Date?
   var recurrenceEnd: EKRecurrenceEnd? {
     didSet {
       if let times = recurrenceEnd?.occurrenceCount {

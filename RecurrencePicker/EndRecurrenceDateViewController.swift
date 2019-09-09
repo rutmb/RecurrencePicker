@@ -17,6 +17,7 @@ internal protocol EndRecurrenceDateViewControllerDelegate: class {
 }
 
 internal protocol EndRecurrenceTableViewCellable: UITableViewCell {
+  var occurrenceDate: Date? { get set }
   var recurrenceEnd: EKRecurrenceEnd? { get set }
   var delegate: EndRecurrenceTableViewDelegate? { get set }
 }
@@ -34,6 +35,7 @@ internal class EndRecurrenceDateViewController: UITableViewController {
   internal var tintColor: UIColor!
   internal var backgroundColor: UIColor?
   internal var separatorColor: UIColor?
+  internal var occurrenceDate: Date?
   
   fileprivate var isShowingPickerView = false
   fileprivate var isShowingOnDatePickerView: Bool {
@@ -83,6 +85,7 @@ extension EndRecurrenceDateViewController {
       let identifier = isShowingOnDatePickerView ? CellID.datePickerViewCell : CellID.endTimesPickerViewCell
       let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! EndRecurrenceTableViewCellable
       cell.recurrenceEnd = recurrenceEnd
+      cell.occurrenceDate = occurrenceDate
       cell.delegate = self
       return cell
     }
@@ -108,6 +111,7 @@ extension EndRecurrenceDateViewController {
     } else {
       cell?.imageView?.isHidden = true
     }
+    cell?.textLabel?.textColor = UIColor(red: 74.0/255, green: 91.0/255, blue: 110.0/255, alpha: 1)
     return cell!
   }
   
